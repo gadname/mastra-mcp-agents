@@ -2,6 +2,8 @@ import { anthropic } from '@ai-sdk/anthropic';
 import { Agent } from '@mastra/core/agent';
 import { Step, Workflow } from '@mastra/core/workflows';
 import { z } from 'zod';
+import { copywriterAgent, editorAgent, seoAgent } from '../agents';
+import { blogGenerationWorkflow } from './blogGenerationWorkflow';
 
 const llm = anthropic('claude-3-5-sonnet-20241022');
 
@@ -182,4 +184,4 @@ const weatherWorkflow = new Workflow({
 
 weatherWorkflow.commit();
 
-export { weatherWorkflow };
+export { copywriterAgent, editorAgent, seoAgent, weatherWorkflow, blogGenerationWorkflow };
